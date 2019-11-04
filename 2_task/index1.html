@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- Воронин, [04.11.19 21:31]
+Build the tower based on the number of floors that are passed as an argument. Write a function called doit that takes as a first argument number of floors and returns and array of string that forms an tower.
+
+Example:
+
+1 floor:
+
+[ '*' ]
+3 floors:
+
+[ '  *  ', 
+  ' *** ', 
+  '*****' ]
+5 floors:
+
+[ '    *    ', 
+  '   ***   ', 
+  '  *****  ', 
+  ' ******* ', 
+  '*********'  ]
+
+Воронин, [04.11.19 21:31]
+assert(doit(1)).toBe([ '*' ])
+assert(doit(3)).toBe(
+[ '  *  ', 
+  ' *** ', 
+  '*****' ])
+assert(doit(5)).toBe(
+[ '    *    ', 
+  '   ***   ', 
+  '  *****  ', 
+  ' ******* ', 
+  '*********'  ])
+
+Воронин, [04.11.19 21:31]
+1 -->
+
+    <script>
+        function doit(floors) {
+            let resArr = [];
+
+            for (let i = 0; i < floors; i++) {
+                let numOfStars = ((i + 1) * 2) - 1;
+                let numOfSpace = floors - i - 1;
+
+                let stage = ' '.repeat(numOfSpace) +
+                    '*'.repeat(numOfStars) +
+                    ' '.repeat(numOfSpace);
+
+                resArr.push(stage)
+            };
+            return resArr;
+        };
+        console.log(doit(10));
+    </script>
+
+</body>
+
+</html>
