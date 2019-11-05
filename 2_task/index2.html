@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Воронин, [04.11.19 21:31]
+Create a function doit that returns a function that counts the number of times its called. See tests for details
+
+Воронин, [04.11.19 21:31]
+const incrementer1 = doit();
+incrementer1();
+incrementer1();
+const resul1 = incrementer1();
+
+const incrementer2 = doit();
+const resul2 = incrementer2();
+
+const incrementer3 = doit();
+incrementer3();
+incrementer3();
+incrementer3();
+incrementer3();
+const resul3 = incrementer3();
+
+assert(resul1).toBe(3)
+assert(resul2).toBe(1)
+assert(resul3).toBe(5) -->
+
+    <script>
+        let doit = () => {
+            let sum = 0;
+            return () => { // вернем безымянную ф-ю с параметром element
+                sum += 1; // прибавим к внешней переменной sum наш element
+                return sum;
+            }
+        }
+
+
+        const incrementer1 = doit();
+        incrementer1();
+        incrementer1();
+        const resul1 = incrementer1();
+        console.log(resul1);
+
+        const incrementer2 = doit();
+        const resul2 = incrementer2();
+        console.log(resul2);
+
+
+        const incrementer3 = doit();
+        incrementer3();
+        incrementer3();
+        incrementer3();
+        incrementer3();
+        const resul3 = incrementer3();
+        console.log(resul3);
+    </script>
+
+</body>
+
+</html>
