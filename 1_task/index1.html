@@ -10,22 +10,13 @@
 
 <body>
     <script>
+        /*Create function that adds 2 numbers*/
+
         function add(a = 0, b = 0) {
             return a + b;
         };
         console.log(add(-5, -2));
-
-
-        function doit(someArr) {
-            someArr.reduce((min, elem, index, arr) => {
-                if (min < arr[index + 1] && arr[index + 1]) {
-                    min = arr[index + 1];
-                    console.log(min);
-                }
-                return min;
-            });
-        };
-        doit([1, 2, -2, 100]);
+        
     </script>
 
 </body>
