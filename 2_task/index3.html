@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+        Воронин, [04.11.19 21:32]
+        create a function that adds 2 numbers, but takes these arguments in separate calls
+
+        Воронин, [04.11.19 21:32]
+        assert(add(100)(100)).toBe(200)
+        assert(add(20)(10)).toBe(30)
+        assert(add(0)(10)).toBe(10)
+        assert(add(20)(-10)).toBe(10)
+        assert(add(20)(-50)).toBe(-30)
+        assert(add()(10)).toBe(10)
+        assert(add(15)()).toBe(15)
+        assert(add()()).toBe(0)
+
+       
+         add() - function that student should create
+         assert(actual) - object that takes actual result
+         toBe(expected) - method compare with expected
+     
+
+        Воронин, [04.11 .19 21: 32]
+        */
+
+
+
+        function sum(a, b) {
+            return a + b;
+        };
+
+        function curry(someFunk) {
+            return function (a = 0) {
+                return function (b = 0) {
+                    return someFunk(a, b);
+                }
+            }
+        };
+
+        let add = curry(sum);
+        console.log(add()());
+
+        console.log(add(100)(100), 'is(200)');
+        console.log(add(20)(10), 'is(30)');
+        console.log(add(0)(10), 'is(10)');
+        console.log(add(20)(-10), 'is(10)');
+        console.log(add(20)(-50), 'is(-30)')
+        console.log(add()(10), 'is(10)');
+        console.log(add(15)(), 'is(15)');
+        console.log(add()(), 'is(0)');
+    </script>
+
+</body>
+
+</html>
