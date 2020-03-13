@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*Создать функцию createBird которая возвращает объект птицы. Птицы должны уметь
+
+        летать с методом fly(), после вызова дистанция которую пролетела птица увеличивается на 1, в нее можно передать
+        число A, тогда дистанция увеличится на 1 * A
+        должна быть возможность соединять вызовы функции fly() в цепочку (см.тесты)
+        возвращать дистанцию которая пролетела птица (метод getDistance)
+        сравнивать дистанцию которая пролетела с другой птице (метод compareWith(bird))
+
+         Test example 
+
+        const bird1 = createBird();
+        const bird2 = createBird();
+        const bird3 = createBird();
+
+        bird1.fly()
+        bird1.fly()
+        assert(bird1.getDistance()).toBe(2)
+
+        bird2.fly().fly().fly()
+        assert(bird2.getDistance()).toBe(3)
+
+        bird2.fly(3)
+        assert(bird2.getDistance()).toBe(6)
+
+        bird1.fly(2).fly().fly(1)
+        assert(bird1.getDistance()).toBe(6)
+
+        bird1.fly(3)
+        assert(bird1.getDistance()).toBe(9)
+
+        bird3.fly(2)
+        assert(bird2.compareWith(bird3)).toBe('I win');
+        assert(bird1.compareWith(bird3)).toBe('I win');
+        assert(bird3.compareWith(bird1)).toBe('Another bird win');
+
+        bird3.fly(50)
+        assert(bird1.compareWith(bird3)).toBe('Another bird win');
+
+        
+        createBird() - function that student should create
+        assert(actual) - object that takes actual result
+        toBe(expected) - method compare with expected    
+        */
+
+        
+    </script>
+    
+</body>
+</html>

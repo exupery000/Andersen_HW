@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*Создать функцию box(obj) для "упаковки" объектов, после применения этой функции возвращается новый объект в котором оригинальный записан в свойство prop.
+
+        Также этот новый объект должен обладать методом unbox который возвращает оригинальный упакованный объект (если есть вложенность то он должен пройтись по цепочке вложенности)
+
+        Test example 
+        const box1 = box({ a: 10 })
+        const box2 = box(box1)
+        const box3 = box(box2)
+
+        assert(box1.prop).toBe({ a: 10 });
+        assert(box2.prop.prop).toBe({ a: 10 });
+        assert(box3.prop.prop.prop).toBe({ a: 10 });
+
+        assert(box1.unbox()).toBe({ a: 10 });
+        assert(box2.unbox()).toBe({ a: 10 });
+        assert(box3.unbox()).toBe({ a: 10 });
+
+        const box4 = box('Nu privet!')
+        const box5 = box(box4)
+
+        assert(box4.prop).toBe('Nu privet!');
+        assert(box5.prop.prop).toBe('Nu privet!');
+
+        assert(box4.unbox()).toBe('Nu privet!');
+        assert(box5.unbox()).toBe('Nu privet!');
+
+
+        box() - function that student should create
+        assert(actual) - object that takes actual result
+        toBe(expected) - method compare with expected
+        
+        */
+
+        function box(object) {
+            let obj = {};
+            obj.prop = object;
+            obj.unbox = function () {
+                for (let key in this) {
+                    if (typeof (this[key]) === 'object') {
+                        //console.log('key это конечный объект');
+                        //console.log(this[key]);
+                        for(let key in this[key]) {
+                            if (key) {
+
+                            }
+                        }
+
+
+
+                        //console.log('key это не объект');
+                        //console.log(this[key]);
+                        return this;
+                    } else if (typeof (this[key]) === 'string') {
+                        console.log('prop это конечный элемент');
+                        return this[key].unbox();
+                    }
+                }
+            };
+            return obj;
+        };
+
+
+
+
+
+        // const box1 = box({
+        //     a: 10
+        // });
+        // const box2 = box(box1);
+        // const box3 = box(box2);
+
+        // console.log(box1.prop);
+        // console.log(box2.prop.prop);
+        // console.log(box3.prop.prop.prop);
+        // console.log('***');
+
+
+        //console.log(box1);
+        //box1.unbox()
+
+        // console.dir(box2);
+        // box2.unbox();
+
+
+
+        //console.log(box2.unbox());
+        // console.log(box3.unbox());
+        console.log('***');
+
+
+        // const box4 = box('Nu privet!')
+        // const box5 = box(box4)
+
+        // console.log(box4.prop, ('Nu privet!'));
+        // console.log(box5.prop.prop, ('Nu privet!'));
+
+        // console.log(box4.unbox(), ('Nu privet!'));
+        // console.log(box5.unbox(), ('Nu privet!'));
+
+
+        
+        function box(object) {
+            let someObj = {
+                unbox() {
+                    if (this.prop.prop === undefined) {
+                        return this.prop;
+                    } else if (this.prop.prop !== undefined) {
+                        return this.prop.unbox();
+                    }
+                }
+            };
+            someObj.prop = object;
+            return someObj;
+        };
+
+        const box1 = box({a: 10});
+        const box2 = box(box1);
+        const box3 = box(box2);
+        const box4 = box({prop: 10 })
+
+        console.log(box1.prop);
+        console.log(box2.prop.prop);
+        console.log(box3.prop.prop.prop);
+        console.log('***');
+
+
+        console.log(box1);
+        console.log(box1.unbox());
+
+    
+        console.log(box2);
+        console.log(box2.unbox());
+
+        console.log(box3);
+        console.log(box3.unbox());
+
+        console.log(box4);
+        console.log(box4.unbox());
+
+
+    </script>
+
+</body>
+
+</html>

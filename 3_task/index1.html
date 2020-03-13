@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    /*
+    Создать функцию createBlock(value, next) которая будет возвращать объект блока. Она должна принимать
+
+    value значение которое храниться в блоке
+    next следующий блок
+    Блок должен уметь себя привязывать к другим объектам при помощи метода link. Также у каждого блока должна быть возможность извлечь (при помощи метода getNext()) привязанный объект. Привязывать к одному блоку можно только один объект.
+
+    Блок должен уметь вернуть хранимое значение при помощи метода getVal()
+
+    Test example 
+    const block = createBlock({ m: 'MVar' })
+
+    assert(block.getVal()).toBe({ m: 'MVar' })
+    assert(block.getNext()).toBe(null)
+
+    block.link(createBlock({ f: 'FVar' }));
+
+    assert(block.getVal()).toBe({ m: 'MVar' })
+    assert(block.getNext().getVal()).toBe({ f: 'FVar' })
+    assert(block.getNext().getNext()).toBe(null)
+
+    block.getNext().link(createBlock({ sd: 'SDVar' }, { l: 'LVar' }))
+    assert(block.getNext().getVal()).toBe({ f: 'FVar' })
+    assert(block.getNext().getNext().getVal()).toBe({ sd: 'SDVar' })
+
+    /*
+    createBlock() - function that student should create
+    assert(actual) - object that takes actual result
+    toBe(expected) - method compare with expected
+    */
+
+    </script>
+    
+    
+</body>
+</html>

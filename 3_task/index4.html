@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        Сделать функцию createCat, которая будет возвращать объекты котов. Первый параметр это возраст, второй - имя кота. Эти объекты должны обладать:
+
+        методом meow, возвращающий строку с именем кота (посмотреть в тестах как строка выглядит)
+        методом myAge, возвращающий возраст кота, при условии что он меньше 10. Если возраст равен или больше 10, кот должен сообщить что он слишком стар
+        методом myOrder, возвращающий порядок в ктором кот появился исходя из переданного возраста. Т.е. кот с самым большим возрастом (из созданных в данный оммент) будет иметь порядок 1, кот с меньшим возрастом - порядок 2, кот с еще меньшим возрастом - порядок 3 и т.д.
+        Hint
+        Подумайте как можно было бы сохранять объекты созданных котов, для того что бы потом вычислять их порядок
+
+        Test example 
+        const cat1 = createCat(10, 'Boris');
+        const cat2 = createCat(7, 'Robert');
+        const cat3 = createCat(11, 'Fedor');
+        const cat4 = createCat(2, 'Doosya');
+        const cat5 = createCat(6, 'Cooper');
+
+        assert(cat1.meow()).toBe('My name is Boris!')
+        assert(cat2.meow()).toBe('My name is Robert!')
+        assert(cat3.meow()).toBe('My name is Fedor!')
+        assert(cat4.meow()).toBe('My name is Doosya!')
+
+        assert(cat1.myAge()).toBe('I am too old...')
+        assert(cat2.myAge()).toBe('My age is 7')
+        assert(cat3.myAge()).toBe('I am too old...')
+        assert(cat4.myAge()).toBe('My age is 2')
+        assert(cat5.myAge()).toBe('My age is 6')
+
+        assert(cat1.myOrder()).toBe('I am cat №2 in family')
+        assert(cat2.myOrder()).toBe('I am cat №3 in family')
+        assert(cat3.myOrder()).toBe('I am cat №1 in family')
+        assert(cat4.myOrder()).toBe('I am cat №5 in family')
+        assert(cat5.myOrder()).toBe('I am cat №4 in family')
+
+
+        createCat() - function that student should create
+        assert(actual) - object that takes actual result
+        toBe(expected) - method compare with expected
+
+
+*/
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+
+        Воронин, [04.11.19 21:32]
+        create a function that adds N numbers, but takes these arguments in separate calls
+
+        Воронин, [04.11.19 21:32]
+         Test example 
+        assert(add(100)()).toBe(100)
+        assert(add(20)(30)()).toBe(50)
+        assert(add()()).toBe(0)
+        assert(add(20)(30)(-10)(34)()).toBe(74)
+        assert(add(20)(30)(0)()).toBe(50)
+        assert(add(-20)(0)(0)()).toBe(-20)
+        assert(add(-20)(0)(0)(0)(10)()).toBe(-10)
+        assert(add(10)(10)(-10)(10)(10)(10)(10)(10)()).toBe(60)
+
+
+         add() - function that student should create
+         assert(actual) - object that takes actual result
+         toBe(expected) - method compare with expected
+
+        Воронин, [04.11.19 21:32]
+        4   
+        */
+
+        function sum(a, b) {
+            return a + b;
+        };
+
+        function curryAdvance(someFunk) {
+            return function (a = 0) {
+                return function (b = 0) {
+                    return someFunk(a, b);
+                }
+            }
+        };
+
+        let add = curry(sum);
+        console.log(add()());
+    </script>
+
+</body>
+
+</html>
